@@ -1,14 +1,15 @@
 {
-    "family": FAMILY,
+    "family": "my-first-task",
     "containerDefinitions": [
         {
-            "image": "REPOSITORY_URI:BUILD_NUMBER",
-            "name": NAME,
+            "image": "291222035571.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr-repo",
+            "name": "my-first-task",
 	    "essential": true,
             "portMappings": [
                 {
-                    "containerPort": 3000,
-                    "hostPort": 3000
+                    "containerPort": 3100,
+                    "hostPort": 3100,
+		    "protocol": "tcp"	
                 }
             ]
         }
@@ -19,5 +20,5 @@
              "FARGATE"
     ],
     "networkMode": "awsvpc",
-    "executionRoleArn": ROLE_ARN 
+    "executionRoleArn": "arn:aws:iam::291222035571:role/ecsTaskExecutionRole"
 }
