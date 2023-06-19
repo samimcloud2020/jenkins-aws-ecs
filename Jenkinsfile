@@ -51,7 +51,6 @@ pipeline {
             withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
                 script {
 			sh ' chmod +x ./script.sh'
-			#sh 'PATH=$PATH:/usr/local/bin'
 			sh './script.sh'
                 }
             } 
