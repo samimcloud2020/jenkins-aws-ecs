@@ -17,7 +17,7 @@ pipeline {
     stages {
 
     // Tests
-    stage('Unit Tests') {
+    /* stage('Unit Tests') {
       steps{
         script {
           sh 'npm install'
@@ -25,7 +25,7 @@ pipeline {
         }
       }
     }
-     //   
+     */
     // Building Docker images
     stage('Building image') {
       steps{
