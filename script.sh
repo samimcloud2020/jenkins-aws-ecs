@@ -1,7 +1,7 @@
 #!/bin/bash
- rm /var/lib/apt/lists/lock
- rm /var/cache/apt/archives/lock
- rm /var/lib/dpkg/lock
+ sudo rm /var/lib/apt/lists/lock
+ sudo rm /var/cache/apt/archives/lock
+ sudo rm /var/lib/dpkg/lock
 apt update -y
 apt install jq -y
 ROLE_ARN=`aws ecs describe-task-definition --task-definition "${TASK_DEFINITION_NAME}" --region "${AWS_DEFAULT_REGION}" | jq .taskDefinition.executionRoleArn`
