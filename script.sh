@@ -1,13 +1,5 @@
 #!/bin/bash
-set -x
- groupadd docker
- usermod -aG docker $USER
-chmod 777 /var/run/docker.sock
-PATH=$PATH:/usr/local/bin; export PATH
-apt install jq -y
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
+
 
 ROLE_ARN=`aws ecs describe-task-definition --task-definition "${TASK_DEFINITION_NAME}" --region "${AWS_DEFAULT_REGION}" | jq .taskDefinition.executionRoleArn`
 echo "ROLE_ARN= " $ROLE_ARN
