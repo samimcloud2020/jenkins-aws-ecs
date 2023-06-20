@@ -47,11 +47,11 @@ pipeline {
       }
       
     stage('Deploy') {
-     
-     steps{
-            withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
-                
-			sh 'aws ecs update-service --cluster ${CLUSTER_NAME} --service ${SERVICE_NAME} --force-new-deployment'
+      steps{
+	  script {   
+            	withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
+                          sh ' chmod +x ./script.sh'
+			  sh ' ./script.sh' 
 			
                 }
             } 
