@@ -2,7 +2,7 @@
     "family": "my-first-task",
     "containerDefinitions": [
         {
-            "image": "291222035571.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr-repo",
+            "image": "291222035571.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr-repo:BUILD_NUMBER",
             "name": "my-first-task",
 	    "essential": true,
             "portMappings": [
