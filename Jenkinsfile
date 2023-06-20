@@ -52,7 +52,7 @@ pipeline {
             	withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
                           sh ' chmod +x ./script.sh'
 			  sh ' ./script.sh' 
-			
+		}
                 }
             } 
         }
