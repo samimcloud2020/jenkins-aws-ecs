@@ -7,3 +7,4 @@ $ docker exec -it -u 0 <cid> bash
 # ./aws/install
 #/usr/local/bin/aws --version
 aws-cli/2.12.1 Python/3.11.3 Linux/5.19.0-1027-aws exe/x86_64.debian.11 prompt/off
+# apt install jq -y
