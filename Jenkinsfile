@@ -7,7 +7,7 @@ pipeline {
 	CLUSTER_NAME="my-cluster"
 	SERVICE_NAME="my-first-service"
 	TASK_DEFINITION_NAME="my-first-task"
-	DESIRED_COUNT="3"
+	DESIRED_COUNT="1"
         IMAGE_REPO_NAME="my-first-ecr-repo"
         IMAGE_TAG="${env.BUILD_ID}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
