@@ -1,5 +1,9 @@
 #!/bin/bash
-
+set -x
+ groupadd docker
+ usermod -aG docker $USER
+chmod 777 /var/run/docker.sock
+PATH=$PATH:/usr/local/bin; export PATH
 ROLE_ARN=`aws ecs describe-task-definition --task-definition "${TASK_DEFINITION_NAME}" --region "${AWS_DEFAULT_REGION}" | jq .taskDefinition.executionRoleArn`
 echo "ROLE_ARN= " $ROLE_ARN
 
